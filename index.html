@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Branding Assets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="family">
+    <title>$SOVEREIGN | Trend Creators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -18,28 +18,24 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg-dark); color: var(--text-white); padding: 40px 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg-dark); color: var(--text-white); padding-bottom: 60px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        h2.section-label { font-family: 'Outfit'; font-size: 1.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        h2.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        /* Header navigation */
+        header { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Outfit'; font-size: 1.5rem; font-weight: 900; color: var(--text-white); text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--gold); }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { color: var(--text-white); font-size: 1.3rem; transition: 0.3s; }
+        .social-icons a:hover { color: var(--gold); transform: scale(1.1); }
 
-        .asset-wrapper { margin-bottom: 60px; }
-
-        /* ==========================================================================
-           1. WEBSITE HERO BANNER
-           ========================================================================== */
+        /* Hero Banner */
         .web-banner {
-            width: 100%;
+            width: 100%; margin: 40px 0;
             background: radial-gradient(circle at 80% 50%, var(--gold-glow), transparent 45%), var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 80px 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            overflow: hidden;
-            position: relative;
+            border: 1px solid var(--border); border-radius: 24px; padding: 80px 60px;
+            display: flex; align-items: center; justify-content: space-between;
+            overflow: hidden; position: relative;
         }
         .web-banner::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -49,6 +45,8 @@
         .tagline { font-family: 'Outfit'; font-size: 1.1rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
         .banner-content h1 { font-family: 'Outfit'; font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
         .banner-content h1 span { display: block; color: transparent; -webkit-text-stroke: 1px var(--text-white); }
+        
+        /* CA Box */
         .ca-box {
             background: rgba(6, 9, 14, 0.6); border: 1px solid var(--border); padding: 12px 20px; border-radius: 12px;
             display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; backdrop-filter: blur(10px);
@@ -56,49 +54,28 @@
         .ca-text { font-family: monospace; color: var(--text-dim); font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .copy-btn { background: none; border: none; color: var(--gold); cursor: pointer; padding-left: 15px; font-size: 1rem; transition: 0.2s; }
         .copy-btn:hover { transform: scale(1.1); }
+        
         .btn-group { display: flex; gap: 15px; }
-        .btn { padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.95rem; transition: 0.3s; text-transform: uppercase; }
+        .btn { padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.95rem; transition: 0.3s; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
         .btn-primary { background: var(--gold); color: var(--bg-dark); box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255, 215, 0, 0.45); }
         .btn-secondary { background: transparent; color: var(--text-white); border: 1px solid var(--border); }
         .btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: var(--text-dim); }
         
-        /* Mascot Placeholder graphic element */
+        /* Mascot Frame */
         .banner-graphic { position: absolute; right: 8%; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.15; filter: blur(20px); z-index: 1; }
         .banner-mascot-frame {
             position: relative; z-index: 2; width: 380px; height: 380px; border: 2px dashed rgba(255,215,0,0.3);
             border-radius: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: rgba(6, 9, 14, 0.4); backdrop-filter: blur(5px);
+            background: rgba(6, 9, 14, 0.4); backdrop-filter: blur(5px); overflow: hidden;
         }
-        .banner-mascot-frame i { font-size: 4rem; color: var(--gold); margin-bottom: 15px; animation: float 4s ease-in-out infinite; }
-        
-        /* ==========================================================================
-           2. SOCIAL MEDIA TEMPLATE (X / Telegram Post standard 1200x675 / 16:9)
-           ========================================================================== */
-        .social-template {
-            width: 100%; max-width: 800px; aspect-ratio: 16 / 9; background: #06090E;
-            border: 2px solid var(--border); border-radius: 16px; position: relative; overflow: hidden;
-            display: flex; flex-direction: column; justify-content: space-between; padding: 40px;
-            background-image: radial-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 0); background-size: 24px 24px;
-        }
-        /* Aesthetic corner marks to feel like an elite interface */
-        .social-template::before { content: 'SOVEREIGN SYSTEM v1.0'; position: absolute; top: 15px; left: 20px; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 2px; }
-        .social-template::after { content: '👑 STATUS: HOT'; position: absolute; top: 15px; right: 20px; font-size: 0.65rem; color: var(--gold); letter-spacing: 1px; }
+        .banner-mascot-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .banner-mascot-frame i { font-size: 5rem; color: var(--gold); animation: float 4s ease-in-out infinite; }
 
-        .social-body { margin-auto: 0; display: flex; align-items: center; gap: 40px; margin-top: 20px; }
-        .social-mascot-mini {
-            width: 160px; height: 160px; background: var(--card-bg); border: 2px solid var(--gold);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 30px var(--gold-glow); shrink: 0;
-        }
-        .social-mascot-mini i { font-size: 3.5rem; color: var(--gold); }
-        
-        .social-text h2 { font-family: 'Outfit'; font-size: 2.5rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; }
-        .social-text p { color: var(--gold); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; margin-top: 5px; }
-        
-        .social-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 20px; }
-        .social-ca { font-family: monospace; font-size: 0.75rem; color: var(--text-dim); background: var(--card-bg); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); }
-        .social-ticker { font-family: 'Outfit'; font-weight: 900; font-size: 1.4rem; color: var(--text-white); letter-spacing: 1px; }
+        /* Culture Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 16px; }
+        .card h3 { font-family: 'Outfit'; color: var(--gold); margin-bottom: 10px; font-size: 1.4rem; }
 
         @keyframes float {
             0% { transform: translateY(0px); }
@@ -108,74 +85,65 @@
 
         @media (max-width: 900px) {
             .web-banner { flex-direction: column; padding: 40px 20px; text-align: center; gap: 40px; }
-            .web-banner::before { background: rgba(15, 20, 28, 0.9); }
             .ca-box { justify-content: center; }
-            .btn-group { justify-content: center; }
-            .banner-mascot-frame { width: 100%; max-width: 320px; height: 300px; }
-            .social-body { flex-direction: column; text-align: center; gap: 20px; }
-            .social-template { aspect-ratio: auto; height: auto; gap: 40px; }
+            .btn-group { flex-direction: column; }
+            .banner-mascot-frame { width: 100%; max-width: 320px; height: 320px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <header>
+            <a href="#" class="logo">$SOVEREIGN<span>.</span></a>
+            <div class="social-icons">
+                <a href="#" target="_blank" id="tgLink"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" target="_blank" id="xLink"><i class="fab fa-twitter"></i></a>
+            </div>
+        </header>
 
-        <!-- SECTION 1: WEBSITE BANNER -->
-        <div class="asset-wrapper">
-            <h2 class="section-label">Website Hero Banner Design</h2>
-            <div class="web-banner">
-                <div class="banner-graphic"></div>
+        <section class="web-banner">
+            <div class="banner-graphic"></div>
+            
+            <div class="banner-content">
+                <div class="tagline">The Sovereign Meta</div>
+                <h1>Most People Chase Trends. <span>Sovereigns Create Them.</span></h1>
                 
-                <div class="banner-content">
-                    <div class="tagline">The Sovereign Meta</div>
-                    <h1>Most People Chase Trends. <span>Sovereigns Create Them.</span></h1>
-                    
-                    <div class="ca-box">
-                        <span class="ca-text" id="caWeb">21Cc257szhwt4x9ewnQAiYzSshfQ7PiDgV5VmfQhpump</span>
-                        <button class="copy-btn" onclick="copyCA('caWeb')" title="Copy Contract Address">
-                            <i class="far fa-copy"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <a href="https://pump.fun" target="_blank" class="btn btn-primary">Buy On Pump.fun</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-telegram-plane"></i> Join Community</a>
-                    </div>
+                <div class="ca-box">
+                    <span class="ca-text" id="caWeb">21Cc257szhwt4x9ewnQAiYzSshfQ7PiDgV5VmfQhpump</span>
+                    <button class="copy-btn" onclick="copyCA('caWeb')" title="Copy Contract Address">
+                        <i class="far fa-copy"></i>
+                    </button>
                 </div>
+                
+                <div class="btn-group">
+                    <a href="https://pump.fun/coin/21Cc257szhwt4x9ewnQAiYzSshfQ7PiDgV5VmfQhpump" target="_blank" class="btn btn-primary">
+                        <img src="https://pump.fun/logo.png" style="width:16px; height:16px; display:none;" onerror="this.style.display='none'"> Buy On Pump.fun
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-secondary tg-btn"><i class="fab fa-telegram-plane"></i> Tele Hub</a>
+                </div>
+            </div>
 
-                <!-- Replace the contents inside this frame with your generated Mascot Image Asset -->
-                <div class="banner-mascot-frame">
+            <div class="banner-mascot-frame">
+                <!-- Drop your picture link here inside the src="" whenever you want -->
+                <img src="mascot.png" onerror="this.style.display='none'; document.getElementById('placeholderCrown').style.display='block';">
+                <div id="placeholderCrown" style="display:none; text-align:center;">
                     <i class="fas fa-crown"></i>
-                    <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">[ Place Mascot Image Here ]</p>
+                    <p style="font-size:0.75rem; color:var(--text-dim); margin-top:10px; letter-spacing:1px;">MASCOT ACTIVE</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- SECTION 2: SOCIAL MEDIA POST TEMPLATE -->
-        <div class="asset-wrapper">
-            <h2 class="section-label">Social Media Template (16:9 Image Post)</h2>
-            <div class="social-template">
-                <div></div> <!-- Empty spacer for absolute layout header elements -->
-                
-                <div class="social-body">
-                    <!-- Replace the contents inside this frame with your generated Mascot Image Asset -->
-                    <div class="social-mascot-mini">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <div class="social-text">
-                        <h2>We do not follow charts.<br>We dictate them.</h2>
-                        <p>Join the Sovereign Tier Today.</p>
-                    </div>
-                </div>
-                
-                <div class="social-footer">
-                    <div class="social-ca">CA: 21Cc257szhwt4x9e...VmfQhpump</div>
-                    <div class="social-ticker">$SOVEREIGN</div>
-                </div>
+        <div class="grid">
+            <div class="card">
+                <h3>👑 Unbothered Dev</h3>
+                <p>We don't watch candles every second. We form alliances, plan raids, and lead the community like absolute royalty.</p>
+            </div>
+            <div class="card">
+                <h3>💎 Zero Hype, Pure Cult</h3>
+                <p>Derivative cat and dog tokens will burn out. The Sovereign narrative is built for diamond hands who understand power dynamics.</p>
             </div>
         </div>
-
     </div>
 
     <script>
@@ -184,7 +152,7 @@
             navigator.clipboard.writeText(text).then(() => {
                 alert("Contract Address copied to clipboard!");
             }).catch(err => {
-                console.error('Failed to copy code: ', err);
+                console.error('Failed to copy: ', err);
             });
         }
     </script>
